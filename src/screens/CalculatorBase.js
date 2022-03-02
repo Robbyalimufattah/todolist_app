@@ -10,25 +10,25 @@ import {
 } from "native-base";
 import {
   CalculatorButton,
-  CalculatorOperator,
+  CalculatorOperator, CalculatorDecimal
 } from "../components/CalculatorButtons";
 
 export default function CalculatorBase() {
   return (
-    <Box height="full" bg="primary.900" paddingTop={30} paddingX={4}>
+    <Box height="full" bg="black" paddingTop={30} paddingX={4}>
       <Heading
         fontFamily="ComicNeue"
-        size="md"
-        fontWeight="normal"
+        size="2xl"
+        fontWeight="bold"
         color="white"
         paddingY={5}
       >
-        Display
+        Waysmath
       </Heading>
 
       <Box
         marginBottom={8}
-        bg="white"
+        bg="black"
         height={20}
         borderRadius={10}
         paddingX={5}
@@ -36,7 +36,7 @@ export default function CalculatorBase() {
         borderColor="white"
       >
         <Text
-          color="black"
+          color="white"
           fontSize="3xl"
           fontWeight="bold"
           fontFamily="ComicNeue"
@@ -46,53 +46,79 @@ export default function CalculatorBase() {
       </Box>
 
       <VStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={1} />
-          <CalculatorButton value={2} />
-          <CalculatorOperator value={<AddIcon size={5} />} />
-          <CalculatorOperator value={<MinusIcon size={5} />} />
+        <HStack justifyContent="space-between" space={3}>
+        <CalculatorDecimal col={1}
+            value={
+              <Text fontSize="2xl" fontWeight="bold">
+                AC
+              </Text>
+            }
+          />
+          <CalculatorDecimal col={1}
+            value={
+              <Text fontSize="2xl" fontWeight="bold">
+                +/-
+              </Text>
+            }
+          />
+          <CalculatorDecimal col={1} 
+            value={
+                <Text fontSize="2xl" fontWeight="bold">
+                    %
+                </Text>} />
+          <CalculatorOperator col={1} 
+            value={
+                <Text fontSize="2xl" fontWeight="bold">
+                    /
+                </Text>} />
         </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={3} />
-          <CalculatorButton value={4} />
-          <CalculatorOperator
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={7} />
+          <CalculatorButton col={1} value={8} />
+          <CalculatorButton col={1} value={9} />
+          <CalculatorOperator col={1}
             value={
               <Text fontSize="2xl" fontWeight="bold">
-                /
-              </Text>
-            }
-          />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                *
-              </Text>
-            }
-          />
-        </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={5} />
-          <CalculatorButton value={6} />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                %
-              </Text>
-            }
-          />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                =
+                X
               </Text>
             }
           />
         </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={7} />
-          <CalculatorButton value={8} />
-          <CalculatorButton value={9} />
-          <CalculatorButton value={0} />
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={4} />
+          <CalculatorButton col={1} value={5} />
+          <CalculatorButton col={1} value={6} />
+          <CalculatorOperator col={1}
+            value={
+              <Text fontSize="2xl" fontWeight="bold">
+                -
+              </Text>
+            }
+          />
+        </HStack>
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={1} />
+          <CalculatorButton col={1} value={2} />
+          <CalculatorButton col={1} value={3} />
+          <CalculatorOperator col={1}
+            value={
+              <Text fontSize="2xl" fontWeight="bold">
+                +
+              </Text>
+            }
+          />
+        </HStack>
+
+        <HStack justifyContent="space-between" space={3}>
+            <CalculatorButton col={3} value={0} />
+            <CalculatorButton col={1} value={" , "} />
+            <CalculatorOperator col={1}
+            value={
+              <Text fontSize="2xl" fontWeight="bold">
+                +
+              </Text>
+            }
+          />
         </HStack>
       </VStack>
     </Box>
